@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.1.0",
+    "@astrojs/db": "^0.8.6",
     "@astrojs/node": "^8.2.3",
+    "@fontsource-variable/inter-tight": "^5.0.20",
+    "@sinclair/typebox": "^0.32.15",
     "sharp": "^0.33.2",
     "solid-js": "^1.8.15"
   },
@@ -29,7 +32,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "astro": "^4.5.4",
+    "astro": "^4.5.5",
     "astro-capo": "^0.0.1",
     "astro-robots": "^2.0.1",
     "astro-seo": "^0.8.3",

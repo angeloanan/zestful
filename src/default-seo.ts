@@ -1,17 +1,16 @@
-import type { Props as SEOProps } from 'astro-seo'
+import type { SEOProps } from 'astro-seo'
 
 const defaultSEO: SEOProps = {
-  title: "Angelo's Astro Template",
-  titleTemplate: '%s | Astro Template',
+  title: "Angelo's Mood Tracker",
 
-  description:
-    'An Astro template that helps you to focus on programming your site, rather than setting up your toolkits!',
+  description: 'A simple mood tracker that tracks on my mood and energy levels.',
 
   openGraph: {
     basic: {
       type: 'website',
-      title: "Angelo's Astro Template",
-      image: ''
+      title: "Angelo's Mood Tracker",
+      image: '',
+      url: 'https://mood.angelo.fyi'
     }
   },
 
