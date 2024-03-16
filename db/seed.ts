@@ -1,6 +1,6 @@
-import { db } from 'astro:db';
+import { Mood, db } from 'astro:db'
 
 // https://astro.build/db/seed
 export default async function seed() {
-	// TODO
+  await db.insert(Mood).values({ energy: 0, pleasantness: 0 })
 }

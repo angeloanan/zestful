@@ -7,7 +7,7 @@ const extendedTheme = {
     extend: {
       fontFamily: {
         sans: ['InterVariable', 'Inter', ...defaultTheme.fontFamily.sans],
-        sansTight: ['Inter Tight Variable', 'Inter Tight', ...defaultTheme.fontFamily.sans]
+        sansTight: ['Inter Tight', ...defaultTheme.fontFamily.sans]
       }
     }
   },

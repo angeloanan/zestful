@@ -14,9 +14,6 @@ dependencies:
   '@astrojs/node':
     specifier: ^8.2.3
     version: 8.2.3(astro@4.5.5)
-  '@fontsource-variable/inter-tight':
-    specifier: ^5.0.20
-    version: 5.0.20
   '@sinclair/typebox':
     specifier: ^0.32.15
     version: 0.32.15
@@ -46,6 +43,9 @@ devDependencies:
   '@fontsource-variable/inter':
     specifier: ^5.0.17
     version: 5.0.17
+  '@fontsource/inter-tight':
+    specifier: ^5.0.19
+    version: 5.0.19
   '@tailwindcss/forms':
     specifier: ^0.5.7
     version: 0.5.7(tailwindcss@3.4.1)
@@ -890,12 +890,12 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /@fontsource-variable/inter-tight@5.0.20:
-    resolution: {integrity: sha512-HJH+9/ftH0+iIQoM59Gkx+C0dBJo9YS026W1e0RWF8Ra39lhXDBti8Pfh4F2m7eTcxmHx9wt/N0MvJ8hQObDmg==}
-    dev: false
-
   /@fontsource-variable/inter@5.0.17:
     resolution: {integrity: sha512-sa80nNnqF8kzhBvqusWiL9vlPMVpdmOwMmDBup46Jggsr1VBqo+YuzwB36Ls+X6uHJtb8Yv3ALBHL/zGmT862A==}
+    dev: true
+
+  /@fontsource/inter-tight@5.0.19:
+    resolution: {integrity: sha512-Jrw/1j0dSV5saqNObmmnIC68DndB1g/1Xmphk4bKDp6issrq4lwIArU3BfXgWNrNQE3Kkmmbh7XRAbHD9QbOHw==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.14:

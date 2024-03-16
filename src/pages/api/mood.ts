@@ -5,7 +5,7 @@ import { TypeCompiler } from '@sinclair/typebox/compiler'
 
 export const prerender = false
 
-const getLatestMoodQuery = db
+export const getLatestMoodQuery = db
   .select({ energy: Mood.energy, pleasantness: Mood.pleasantness, timestamp: Mood.timestamp })
   .from(Mood)
   .limit(1)
@@ -20,7 +20,7 @@ export const GET: APIRoute = async () => {
 
   return new Response(
     JSON.stringify({
-      timestamp: mood[0]?.timestamp,
+      timestamp: mood[0]?.timestamp.getTime(),
       energy: mood[0]?.energy,
       pleasantness: mood[0]?.pleasantness
     })

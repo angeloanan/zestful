@@ -4,6 +4,7 @@
 
 interface ImportMetaEnv {
   readonly ADMIN_PASSWORD: string
+  readonly SITE: string
 }
 
 interface ImportMeta {

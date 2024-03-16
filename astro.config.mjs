@@ -1,6 +1,5 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, squooshImageService } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
-import node from '@astrojs/node'
 import solidJs from '@astrojs/solid-js'
 import sitemap from '@astrojs/sitemap'
 
@@ -12,23 +11,24 @@ import db from '@astrojs/db'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://angeloanan.xyz',
+  output: 'hybrid',
+  site: 'https://mood.angelo.fyi',
+  // site: 'http://localhost:4321',
   prefetch: {
     // defaultStrategy: 'viewport',
     prefetchAll: true
   },
-  integrations: [solidJs(), tailwind(), sitemap(), robots(), db()],
-  output: 'hybrid',
-  adapter: node({
-    mode: 'standalone'
+  integrations: [db(), solidJs(), tailwind(), sitemap(), robots()],
+  image: {
+    service: squooshImageService()
+  },
+  adapter: cloudflare({
+    mode: 'advanced',
+    routes: {
+      strategy: 'auto',
+      include: [],
+      exclude: []
+    },
+    imageService: 'compile'
   })
-  // adapter: cloudflare({
-  //   mode: 'advanced',
-  //   routes: {
-  //     strategy: 'auto',
-  //     include: [],
-  //     exclude: []
-  //   },
-  //   imageService: 'compile'
-  // })
 })
