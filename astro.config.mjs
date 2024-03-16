@@ -1,10 +1,10 @@
-import { defineConfig, squooshImageService } from 'astro/config'
+import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import solidJs from '@astrojs/solid-js'
 import sitemap from '@astrojs/sitemap'
 
 import robots from 'astro-robots'
-import cloudflare from '@astrojs/cloudflare'
+import node from '@astrojs/node'
 
 // https://astro.build/config
 import db from '@astrojs/db'
@@ -19,16 +19,7 @@ export default defineConfig({
     prefetchAll: true
   },
   integrations: [db(), solidJs(), tailwind(), sitemap(), robots()],
-  image: {
-    service: squooshImageService()
-  },
-  adapter: cloudflare({
-    mode: 'advanced',
-    routes: {
-      strategy: 'auto',
-      include: [],
-      exclude: []
-    },
-    imageService: 'compile'
+  adapter: node({
+    mode: 'standalone'
   })
 })
