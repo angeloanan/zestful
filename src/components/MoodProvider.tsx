@@ -1,6 +1,8 @@
 import { createResource, type Component } from 'solid-js'
 import { MoodBoard } from './MoodBoard'
 
+export const prerender = false
+
 // export const prerender = false
 const BASE_URL = import.meta.env.SITE
 const fetchUrl = new URL('api/mood', BASE_URL)
