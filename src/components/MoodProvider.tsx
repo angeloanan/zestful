@@ -3,7 +3,7 @@ import { MoodBoard } from './MoodBoard'
 
 // export const prerender = false
 const BASE_URL = import.meta.env.SITE
-const fetchUrl = `https://${BASE_URL}/api/mood`
+const fetchUrl = new URL('api/mood', BASE_URL)
 
 export const MoodProvider: Component = () => {
   const [mood] = createResource(() => fetch(fetchUrl).then((res) => res.json()))
