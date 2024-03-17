@@ -23,7 +23,14 @@ export const GET: APIRoute = async () => {
       timestamp: mood[0]?.timestamp.getTime(),
       energy: mood[0]?.energy,
       pleasantness: mood[0]?.pleasantness
-    })
+    }),
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=300',
+        'Access-Control-Allow-Origin': '*'
+      }
+    }
   )
 }
 
