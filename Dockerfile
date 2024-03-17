@@ -16,7 +16,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 FROM build-deps AS build
 COPY . .
 ENV NODE_ENV=production
-RUN pnpm build
+RUN pnpm build --remote
 
 FROM gcr.io/distroless/nodejs20-debian12 AS runtime
 COPY --from=prod-deps /app/node_modules ./node_modules
