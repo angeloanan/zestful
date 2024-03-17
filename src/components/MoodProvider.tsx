@@ -1,8 +1,6 @@
 import { createResource, type Component } from 'solid-js'
 import { MoodBoard } from './MoodBoard'
 
-export const prerender = false
-
 // export const prerender = false
 const BASE_URL = import.meta.env.SITE
 const fetchUrl = new URL('api/mood', BASE_URL)
@@ -21,7 +19,14 @@ export const MoodProvider: Component = () => {
         )}
       </p>
 
-      <MoodBoard energy={(mood()?.energy + 1) / 2} pleasantness={(mood()?.pleasantness + 1) / 2} />
+      {mood.loading ? (
+        <MoodBoard />
+      ) : (
+        <MoodBoard
+          energy={(mood()?.energy + 1) / 2}
+          pleasantness={(mood()?.pleasantness + 1) / 2}
+        />
+      )}
     </>
   )
 }
