@@ -17,7 +17,10 @@
     "@astrojs/cloudflare": "^9.1.0",
     "@astrojs/db": "^0.8.6",
     "@astrojs/node": "^8.2.3",
+    "@nanostores/persistent": "^0.10.1",
+    "@nanostores/solid": "^0.4.2",
     "@sinclair/typebox": "^0.32.15",
+    "nanostores": "^0.10.0",
     "sharp": "^0.33.2",
     "solid-js": "^1.8.15"
   },

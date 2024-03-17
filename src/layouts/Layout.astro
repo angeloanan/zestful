@@ -4,6 +4,7 @@ import defaultSEO from '../default-seo.ts'
 import { SEO, type Props as SEOProps } from 'astro-seo'
 import type { PartialDeep } from 'type-fest'
 import { Head } from 'astro-capo'
+import ProducedByHuman from '../components/ProducedByHuman.astro'
 
 export interface Props {
   seo?: PartialDeep<SEOProps>
@@ -27,5 +28,24 @@ const finalSeo = Object.assign(defaultSEO, seo)
   </Head>
   <body class='bg-neutral-300'>
     <slot />
+
+    <footer class='m-4 mx-auto flex max-w-screen-sm px-2'>
+      <div class='flex-1'>
+        <div class='text-neutral-500'>
+          Created by <a href='https://angeloanan.xyz' class='font-medium'>Angelo</a>
+        </div>
+        <div class='text-neutral-500'>
+          0.013 g of{' '}
+          <abbr
+            title='Carbon dioxide equivalent'
+            class='font-medium underline decoration-dotted underline-offset-2'>CO<sub>2</sub></abbr
+          >
+          emitted
+        </div>
+      </div>
+      <div>
+        <ProducedByHuman />
+      </div>
+    </footer>
   </body>
 </html>

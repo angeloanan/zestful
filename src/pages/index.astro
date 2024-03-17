@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { MoodProvider } from '../components/MoodProvider.tsx'
-import ProducedByHuman from '../components/ProducedByHuman.astro'
 ---
 
 <Layout>
@@ -10,23 +9,4 @@ import ProducedByHuman from '../components/ProducedByHuman.astro'
 
     <MoodProvider client:only />
   </main>
-
-  <footer class='m-4 mx-auto flex max-w-screen-sm'>
-    <div class='flex-1'>
-      <div class='text-neutral-500'>
-        Created by <a href='https://angeloanan.xyz' class='font-medium'>Angelo</a>
-      </div>
-      <div class='text-neutral-500'>
-        0.013 g of{' '}
-        <abbr
-          title='Carbon dioxide equivalent'
-          class='font-medium underline decoration-dotted underline-offset-2'>CO<sub>2</sub></abbr
-        >
-        emitted
-      </div>
-    </div>
-    <div>
-      <ProducedByHuman />
-    </div>
-  </footer>
 </Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { PasswordInput } from '../components/PasswordInput'
+import { MoodEntry } from '../components/MoodEntry'
+import { ProposedMoodViewer } from '../components/ProposedMoodViewer'
+import { MoodSubmitButton } from '../components/MoodSubmitButton'
+---
+
+<Layout>
+  <main class='mx-auto my-8 max-w-screen-md px-4 md:px-0'>
+    <h1 class='text-4xl font-semibold text-neutral-800'>Set your mood</h1>
+    <div class='mt-4'>
+      <div class='flex'>
+        <p class='flex-1 text-neutral-600'>Enter admin password</p>
+        <ProposedMoodViewer client:idle />
+      </div>
+      <div class='flex'>
+        <PasswordInput client:idle />
+        <MoodSubmitButton client:idle />
+      </div>
+    </div>
+    <div class='mt-4'>
+      <p class='text-neutral-600'>How are you feeling right now?</p>
+
+      <MoodEntry client:idle />
+    </div>
+  </main>
+</Layout>
