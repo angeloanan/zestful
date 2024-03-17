@@ -5,6 +5,9 @@ import { TypeCompiler } from '@sinclair/typebox/compiler'
 
 export const prerender = false
 
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? import.meta.env.ADMIN_PASSWORD ?? 'admin'
+console.log('Your admin password is', ADMIN_PASSWORD)
+
 export const getLatestMoodQuery = db
   .select({ energy: Mood.energy, pleasantness: Mood.pleasantness, timestamp: Mood.timestamp })
   .from(Mood)
@@ -49,7 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (bodyValidateError) {
     return new Response(JSON.stringify(bodyValidateError), { status: 400 })
   }
-  if (body.password !== import.meta.env.ADMIN_PASSWORD) {
+  if (body.password !== ADMIN_PASSWORD) {
     return new Response('Invalid password', { status: 401 })
   }
 
