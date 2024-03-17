@@ -8,7 +8,6 @@ const defaultSEO: SEOProps = {
     basic: {
       type: 'website',
       title: "Zestful · Angelo's Mood Tracker",
-      image: '',
       url: 'https://mood.angelo.fyi'
     }
   },
