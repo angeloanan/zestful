@@ -1,5 +1,7 @@
 FROM node:20 AS base
 WORKDIR /app
+ARG ASTRO_STUDIO_APP_TOKEN
+ENV ASTRO_STUDIO_APP_TOKEN=$ASTRO_STUDIO_APP_TOKEN
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@latest --activate

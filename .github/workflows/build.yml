@@ -34,6 +34,8 @@ jobs:
         with:
           file: Dockerfile
           context: .
+          build-args: |
+            ASTRO_STUDIO_APP_TOKEN: ${{ secrets.ASTRO_STUDIO_APP_TOKEN }}
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
