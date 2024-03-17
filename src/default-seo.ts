@@ -11,6 +11,12 @@ const defaultSEO: SEOProps = {
       image: 'https://mood.angelo.fyi/og.png',
       url: 'https://mood.angelo.fyi'
     }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    image: 'https://mood.angelo.fyi/og.png',
+    title: "Zestful · Angelo's Mood Tracker",
+    description: "Zestful  - A simple mood tracker that tracks Angelo's mood and energy levels."
   }
 }
 
